@@ -1,4 +1,16 @@
 def word_search(grid, array):
+    """Find the first occurrence of each word on a circular grid.
+    
+    Preconditions:
+    grid must be a nonempty rectangular grid with nonempty rows.
+    array contains nonempty words. Search uses eight fixed directions;
+    rows and columns wrap around, and cells may be reused after wrapping.
+    
+    Result:
+    Return (word, (row, column), (dr, dc)) tuples with zero-based
+    coordinates. Search starts in row-major order and uses the direction
+    order in dir. Print a message for each absent word.
+    """
     dir = [(0,1), (0,-1), (1,0), (-1,0), (1,1), (1,-1), (-1,1), (-1,-1)]
     n = len(grid)
     m = len(grid[0])

@@ -2,13 +2,25 @@ from collections import deque
 
 def cycle_detection_bfs(graph):
 
+    """Detect cycles in an undirected graph using BFS parent tracking.
+    
+    Preconditions:
+    Input is a symmetric adjacency dictionary with every vertex as a
+    key and no repeated neighbors. Self-loops are supported for ordinary
+    labels. Known limitation: None collides with the root-parent sentinel.
+    
+    Result:
+    Return a boolean. A self-loop on a vertex labeled None is currently
+    missed; use other labels until the sentinel is corrected.
+    """
     queue = deque()
     visit = {}
     for node in graph:
         visit[node] = 0
     parent = {}
+    root_parent = object()
     for node in graph:
-        parent[node] = None
+        parent[node] = root_parent
 
     def bfs(node):
         while len(queue) != 0:

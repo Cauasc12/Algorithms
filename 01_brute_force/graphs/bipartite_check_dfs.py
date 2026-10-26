@@ -1,5 +1,15 @@
 def bipartite_check_dfs(graph):
 
+    """Check whether an undirected graph is bipartite using DFS.
+    
+    Preconditions:
+    Input is a symmetric adjacency dictionary with every vertex as a
+    key, including isolated vertices. Vertex labels must be hashable.
+    
+    Result:
+    Return a boolean. Disconnected and empty graphs are supported;
+    a self-loop makes the graph non-bipartite.
+    """
     color = {}
     for node in graph:
         color[node] = 0

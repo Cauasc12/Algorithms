@@ -1,4 +1,16 @@
 def convex_hull(points):
+    """Find convex-hull boundary segments by testing pairs of points.
+    
+    Preconditions:
+    For the usual hull-edge interpretation, points must be distinct
+    numeric (x, y) pairs with no three collinear; orientation comparisons
+    must be exact enough to preserve which side of a line a point lies on.
+    
+    Result:
+    Return unordered boundary segments, not a cyclic vertex ordering.
+    With collinear points, also return overlapping supporting segments;
+    duplicates may produce zero-length segments. This behavior is retained.
+    """
     n = len(points)
     segmentos = []
 

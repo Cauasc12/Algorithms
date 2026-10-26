@@ -1,4 +1,12 @@
 def bubble_sort(array):
+    """Sort a mutable list in place in nondecreasing order.
+    
+    Preconditions:
+    Elements must be mutually comparable. Empty lists and duplicates are allowed.
+    
+    Result:
+    Return None; the input list is modified.
+    """
     n = len(array)
     
     for i in range(n):

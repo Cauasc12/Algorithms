@@ -1,4 +1,12 @@
 def string_matching(test, pattern):
+    """Find the first occurrence of a pattern in a string.
+    
+    Preconditions:
+    text (the parameter named test) and pattern are strings.
+    
+    Result:
+    Return a zero-based index or -1 when absent. An empty pattern returns 0.
+    """
     n = len(test)
     m = len(pattern)
     
