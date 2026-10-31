@@ -25,13 +25,13 @@ def merge(A, B, C):
         i += 1
         k += 1
 
-def megesort(A):
+def mergesort(A):
     n = len(A)
     mid = n //2
 
     if(n > 1):
-        B = megesort(A[:mid])
-        C = megesort(A[mid:])
+        B = mergesort(A[:mid])
+        C = mergesort(A[mid:])
 
         merge(A, B, C)
 
