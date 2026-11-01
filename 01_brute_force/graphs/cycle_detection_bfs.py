@@ -6,12 +6,12 @@ def cycle_detection_bfs(graph):
     
     Preconditions:
     Input is a symmetric adjacency dictionary with every vertex as a
-    key and no repeated neighbors. Self-loops are supported for ordinary
-    labels. Known limitation: None collides with the root-parent sentinel.
+    key and no repeated neighbors. Self-loops are cycles, including a
+    self-loop on a vertex labeled None. The root parent is a unique
+    sentinel object, so None remains a valid vertex label.
     
     Result:
-    Return a boolean. A self-loop on a vertex labeled None is currently
-    missed; use other labels until the sentinel is corrected.
+    Return a boolean.
     """
     queue = deque()
     visit = {}

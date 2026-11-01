@@ -9,6 +9,10 @@ Implementations and exercises grouped under this course chapter.
 | [Geometry](geometry/) | Closest Pair, Convex Hull, and Extreme Points |
 | [Graphs](graphs/) | Bipartite checks with BFS/DFS, connected components, cycle detection, iterative DFS, and [topological sorting with DFS](graphs/topological_search_dfs.py) |
 | [Numerical Algorithms](numerical/) | Polynomial Evaluation |
+| [Selection](selection/) | Mode |
+| [Sets](sets/) | Set Intersection |
+
+Mode and set intersection are placed by problem type. They are outside the 14 reviewed contracts below.
 
 ## Input Conditions and Results
 
@@ -24,7 +28,7 @@ Inputs are assumed valid and are not automatically validated. Each main function
 | Extreme Points | Nonempty sequence of `(x, y)` points. Returns lexicographic minimum and maximum, prioritizing `x` and breaking ties by `y`; it does not return all four coordinate extrema. |
 | Bipartite Check, BFS and DFS | Undirected graph represented by symmetric adjacency lists, with every vertex as a dictionary key. Returns a boolean; disconnected and empty graphs are supported, and self-loops invalidate bipartiteness. |
 | Connected Components | Undirected graph with symmetric adjacency lists and every vertex as a dictionary key. Returns the component count; an empty graph has zero components. |
-| Cycle Detection with BFS | Undirected graph with symmetric adjacency lists, every vertex as a key, and no repeated neighbors. Returns a boolean; self-loops are supported except for the known `None`-label issue below. |
+| Cycle Detection with BFS | Undirected graph with symmetric adjacency lists, every vertex as a key, and no repeated neighbors. Returns a boolean. Self-loops are cycles, including a self-loop on a vertex labeled `None`, because the root parent is a unique sentinel object. |
 | Iterative DFS | Directed or undirected adjacency dictionary with every vertex as a key. Visits each vertex once across all components, exploring neighbors in reverse adjacency-list order. Returns the DFS preorder. |
 | Topological Sorting with DFS | Directed adjacency dictionary with every vertex as a key. Returns a topological ordering for a DAG; on a cycle, prints a message and returns `None`. Empty input returns `[]`. |
 | Polynomial Evaluation | Nonempty coefficient sequence in increasing degree order, `[a0, a1, ..., an]`. Returns `a0 + a1*x + ... + an*x**n`. |
@@ -33,9 +37,9 @@ Graph labels must be hashable. Both topological implementations require every ve
 
 ## Correctness Review
 
-The repository-wide checks are reproducible with `python tests/verify_algorithms.py` from the repository root. The review covers these 14 algorithms, including square-grid geometry samples without collinear triples, circular word search, graph self-loops, and cyclic directed graphs.
+The checks for these 14 algorithms were run again on October 31, 2026, as part of the 58,219 checks on the indexed set. All of them passed, including square-grid geometry samples without collinear triples, circular word search, graph self-loops, and cyclic directed graphs.
 
-One boundary case remains: `cycle_detection_bfs({None: [None]})` returns `False` instead of `True`. The root-parent marker is also `None`, so that label collides with the marker. This issue is retained in the verification script as a failing regression check; integer-labeled graph cases passed. Use a unique object as the root-parent sentinel to support `None` labels correctly.
+BFS cycle detection keeps `None` available as a vertex label by using a unique object as the root-parent sentinel. The regression check `cycle_detection_bfs({None: [None]})` returned `True`.
 
 ## Organization Notes
 

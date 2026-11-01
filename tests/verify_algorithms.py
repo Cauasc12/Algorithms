@@ -208,9 +208,9 @@ def graph_algorithms():
             edges = sum(sum(v != u for v in graph[u]) for u in graph) // 2
             check('cycle_detection_bfs', FUNCTIONS['cycle_detection_bfs'](graph)
                   == (loops or edges > n - components), graph)
-    # None is a legal dictionary key but collides with the current parent sentinel.
+    # None is a legal vertex label; the root parent is a distinct sentinel.
     check('cycle_detection_bfs', FUNCTIONS['cycle_detection_bfs']({None: [None]}) is True,
-          'Self-loop on vertex None is incorrectly reported as acyclic')
+          'Self-loop on vertex None')
     for n in range(4):
         possible = list(product(range(n), repeat=2))
         for bits in product((0, 1), repeat=len(possible)):

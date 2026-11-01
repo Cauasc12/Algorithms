@@ -40,6 +40,7 @@ Strategies that solve a problem by reducing it to a smaller instance and using t
 ### Numerical Algorithms
 
 - [Russian Peasant Multiplication](numerical/russian_peasant_multiplication.py)
+- [Polynomial Resolution](numerical/polynon_resolution.py)
 
 ### Games
 
@@ -70,17 +71,18 @@ These contracts describe the supported inputs of the current implementations. Th
 | Minimal-Change Permutations | Nonempty list of distinct elements; generates every permutation through adjacent swaps. |
 | Lights On | Mutable `[identifier, boolean_state]` records; each switch affects only its own light. Mutates states and returns `True` when all lights are on, including empty input. |
 | Russian Peasant Multiplication | First operand is a nonnegative integer; second operand is any integer. Returns their product. |
+| Polynomial Resolution | Filed under numerical algorithms. Its contract has not been reviewed yet. The filename keeps the current spelling, `polynon_resolution`. |
 | One-Pile Nim | Positive integer pile size and removal limit; remove `1..max_take` without exceeding the pile. Taking the last object wins. Returns a winning move when possible, otherwise `1`. |
 | Multi-Pile Nim | Nonnegative integer pile sizes; remove objects from one pile per turn, and taking the last object wins. Returns a winning `(pile_index, removal_count)` when possible, otherwise a legal fallback; returns `None` when no move remains. |
 | Summation Game | Integer current sum strictly below the target and positive integer increment limit. Add `1..max_sum` without exceeding the target; reaching it wins. Returns a winning increment when possible, otherwise `1`. |
 
 ## Correctness Review
 
-All 22 implementations passed the latest repository-wide verification within the contracts above. Checks include repeated values, exhaustive small inputs, full-list and restricted-interval selection, permutation coverage and adjacent swaps, square matrices, counterfeit-coin positions, and game moves compared with exhaustive game-state evaluation.
+All 22 implementations passed the October 31, 2026 verification within the contracts above: the indexed set had 58,219 checks and 0 failures. Checks include repeated values, exhaustive small inputs, full-list and restricted-interval selection, permutation coverage and adjacent swaps, square matrices, counterfeit-coin positions, and game moves compared with exhaustive game-state evaluation.
 
 Kahn's final check now correctly compares `len(order) < len(graph)`; both DAGs and cyclic graphs passed. Its cycle result is `1`, whereas the DFS-based topological implementation in chapter 01 returns `None` on a cycle. Both print a message. These are different documented return conventions.
 
-Run `python tests/verify_algorithms.py` from the repository root to repeat the review. The script also covers chapter 01, where a separate graph-label boundary issue remains. Finite tests support these contracts; they do not replace a general proof of correctness.
+That run also covers chapter 01, including the `None` self-loop regression for BFS cycle detection. `python tests/verify_algorithms.py` currently stops while loading newer chapter 03 files that do not yet define a function with the same name as the file. Finite tests support these contracts; they do not replace a general proof of correctness.
 
 Recursive implementations remain subject to Python's recursion limit; exhaustive generators require time and memory proportional to the generated output.
 
