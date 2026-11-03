@@ -51,6 +51,7 @@ Presorting implementations are grouped by the problem they solve. The chapter fo
 - [Left-to-Right Binary Exponentiation](numerical/left_right_binary_exponentitation.py)
 - [Right-to-Left Binary Exponentiation](numerical/right_left_binary_exponentitation.py)
 - [Right-to-Left Exponentiation](numerical/righ_left_exponentitation.py)
+- [Least Common Multiple](numerical/mmc.py)
 
 ## Files Created but Not Implemented
 

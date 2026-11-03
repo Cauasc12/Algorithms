@@ -1,5 +1,4 @@
 def left_right_binary_exponentitation(a, b):
-    n = len(b)
     product = a
 
     for bit in b:

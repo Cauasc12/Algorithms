@@ -49,22 +49,44 @@ Numbered directories follow the course chapters. Within each chapter, algorithms
 | Sets | [Set Intersection](04_transform_and_conquer/sets/set_intersection.py), [Element Uniqueness](04_transform_and_conquer/sets/element_uniquiness.py), [Telephone Bills](04_transform_and_conquer/sets/telephone_bills.py) | 04 |
 | Intervals | [Maximum Interval Overlap](04_transform_and_conquer/intervals/max_overlap_intervals.py) | 04 |
 | Combinatorics | [Number Placement](04_transform_and_conquer/combinatorics/number_placement.py) | 04 |
-| Numerical Algorithms | [Gaussian Elimination](04_transform_and_conquer/numerical/gaussian_elimination.py), [Horner's Rule](04_transform_and_conquer/numerical/horner_rule.py), [Left-to-Right Binary Exponentiation](04_transform_and_conquer/numerical/left_right_binary_exponentitation.py), [Right-to-Left Binary Exponentiation](04_transform_and_conquer/numerical/right_left_binary_exponentitation.py), [Right-to-Left Exponentiation](04_transform_and_conquer/numerical/righ_left_exponentitation.py) | 04 |
+| Numerical Algorithms | [Gaussian Elimination](04_transform_and_conquer/numerical/gaussian_elimination.py), [Horner's Rule](04_transform_and_conquer/numerical/horner_rule.py), [Left-to-Right Binary Exponentiation](04_transform_and_conquer/numerical/left_right_binary_exponentitation.py), [Right-to-Left Binary Exponentiation](04_transform_and_conquer/numerical/right_left_binary_exponentitation.py), [Right-to-Left Exponentiation](04_transform_and_conquer/numerical/righ_left_exponentitation.py), [Least Common Multiple](04_transform_and_conquer/numerical/mmc.py) | 04 |
 
 ## Files Created but Not Implemented
 
-These files have been created and contain no code. Chapters 01 and 02 have no files in this state. Chapter 05 has no algorithm files yet.
+These files have been created and have no algorithm implementation.
 
 | Algorithm | File | Chapter |
 | --- | --- | --- |
+| Sequential Search | [sequential_search.py](01_brute_force/searching/sequential_search.py) | 01 |
+| Traveling Salesman | [traveling_salesman.py](01_brute_force/exhaustive_search/traveling_salesman.py) | 01 |
+| Knapsack | [knapsack.py](01_brute_force/exhaustive_search/knapsack.py) | 01 |
+| Assignment Problem | [assignment_problem.py](01_brute_force/exhaustive_search/assignment_problem.py) | 01 |
+| Josephus Problem | [josephus_problem.py](02_decrease_and_conquer/combinatorics/josephus_problem.py) | 02 |
+| BST Search and Insertion | [bst_search_insert.py](02_decrease_and_conquer/searching/bst_search_insert.py) | 02 |
 | Median-of-Three Quicksort | [medianofthree_quicksort.py](03_divide_and_conquer/sorting/medianofthree_quicksort.py) | 03 |
 | Randomized Quicksort | [randomized_quicksort.py](03_divide_and_conquer/sorting/randomized_quicksort.py) | 03 |
 | Quickhull | [quickhull.py](03_divide_and_conquer/geometry/quickhull.py) | 03 |
 | Large-Integer Multiplication | [big_number_multiplication.py](03_divide_and_conquer/numerical/big_number_multiplication.py) | 03 |
 | Strassen Matrix Multiplication | [strassen_matrix_multiplication.py](03_divide_and_conquer/numerical/strassen_matrix_multiplication.py) | 03 |
+| Binary Tree Height | [binary_tree_height.py](03_divide_and_conquer/trees/binary_tree_height.py) | 03 |
+| Binary Tree Leaf Counter | [binary_tree_leaf_counter.py](03_divide_and_conquer/trees/binary_tree_leaf_counter.py) | 03 |
+| Binary Tree Traversals | [binary_tree_traversals.py](03_divide_and_conquer/trees/binary_tree_traversals.py) | 03 |
 | Determinant | [determinant.py](04_transform_and_conquer/numerical/determinant.py) | 04 |
 | Inverse Matrix | [inverse_matrix.py](04_transform_and_conquer/numerical/inverse_matrix.py) | 04 |
 | LU Decomposition | [lu_decomposition.py](04_transform_and_conquer/numerical/lu_decomposition.py) | 04 |
+| AVL Tree | [avl_tree.py](04_transform_and_conquer/trees/avl_tree.py) | 04 |
+| 2-3 Tree | [two_three_tree.py](04_transform_and_conquer/trees/two_three_tree.py) | 04 |
+| Bottom-Up Heap Construction | [heap_bottom_up.py](04_transform_and_conquer/heaps/heap_bottom_up.py) | 04 |
+| Heap Insertion and Deletion | [heap_insert_delete.py](04_transform_and_conquer/heaps/heap_insert_delete.py) | 04 |
+| Path Counting by Matrix Powers | [count_paths_matrix_power.py](04_transform_and_conquer/reduction/count_paths_matrix_power.py) | 04 |
+| River Crossing | [river_crossing.py](04_transform_and_conquer/reduction/river_crossing.py) | 04 |
+| Comparison Counting Sort | [comparison_counting_sort.py](05_time_space_tradeoffs/sorting/comparison_counting_sort.py) | 05 |
+| Distribution Counting Sort | [distribution_counting_sort.py](05_time_space_tradeoffs/sorting/distribution_counting_sort.py) | 05 |
+| Horspool Matching | [horspool.py](05_time_space_tradeoffs/strings/horspool.py) | 05 |
+| Boyer-Moore Matching | [boyer_moore.py](05_time_space_tradeoffs/strings/boyer_moore.py) | 05 |
+| Open Hashing | [open_hashing.py](05_time_space_tradeoffs/hashing/open_hashing.py) | 05 |
+| Closed Hashing | [closed_hashing.py](05_time_space_tradeoffs/hashing/closed_hashing.py) | 05 |
+| B-Tree | [b_tree.py](05_time_space_tradeoffs/trees/b_tree.py) | 05 |
 
 ## Conventions
 
@@ -76,7 +98,7 @@ These files have been created and contain no code. Chapters 01 and 02 have no fi
 
 ## Project Status
 
-Work in progress. Algorithms sit in problem-type folders inside each strategy chapter. The index lists implemented algorithms. Eight files in chapters 03 and 04 exist without code; they are listed separately below the index. Chapter 05 has no algorithm files yet. Supported inputs and return conventions for the reviewed chapter 01 and 02 algorithms are documented in those chapter READMEs and function docstrings. Some earlier implementations still use Portuguese local variable names; the English naming convention remains the target for those identifiers.
+Work in progress. Algorithms sit in problem-type folders inside each strategy chapter. The index lists implemented algorithms. Files created without an algorithm implementation are listed in the table below the index. Supported inputs and return conventions for the reviewed chapter 01 and 02 algorithms are documented in those chapter READMEs and function docstrings. Some earlier implementations still use Portuguese local variable names; the English naming convention remains the target for those identifiers.
 
 ## Verification
 
